@@ -17,4 +17,11 @@ public class DeckTest {
     public void deckHas52Cards(){
         assertEquals(52, deck.getNumCards());
     }
+
+    @Test
+    public void lastCardIsKingOfSpades(){
+        assertEquals(SuitType.SPADES, deck.checkSuit(51));
+        assertEquals(RankType.KING, deck.checkRank(51));
+    }
+
 }

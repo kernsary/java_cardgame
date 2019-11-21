@@ -27,4 +27,12 @@ public class Deck {
     public int getNumCards() {
         return this.cards.size();
     }
+
+    public SuitType checkSuit(int cardNumber) {
+        return this.cards.get(cardNumber).getSuit();
+    }
+
+    public RankType checkRank(int cardNumber) {
+        return this.cards.get(cardNumber).getRank();
+    }
 }
