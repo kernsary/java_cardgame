@@ -35,16 +35,16 @@ public class DeckTest {
         assertEquals(52, deck.getCards().size());
     }
 
-    @Test
-    public void deckIsShuffled(){
-        deck.shuffle();
-        assertFalse(RankType.KING == deck.checkRank(51));
-    }
+//    @Test
+//    public void deckIsShuffled(){
+//        deck.shuffle();
+//        assertFalse(RankType.KING == deck.checkRank(51));
+//    }
 
-    @Test
-    public void deckCanDealCard(){
-        deck.shuffle();
-        deck.dealHand();
-        assertEquals(7, deck.getHand().size());
-    }
+//    @Test
+//    public void deckCanDealCard(){
+//        deck.shuffle();
+//        deck.dealHand();
+//       assertEquals(7, deck.getHand().size());
+//    }
 }
