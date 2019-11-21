@@ -1,7 +1,11 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class DeckTest {
 
@@ -24,4 +28,14 @@ public class DeckTest {
         assertEquals(RankType.KING, deck.checkRank(51));
     }
 
+    @Test
+    public void canGetCards(){
+        assertEquals(52, deck.getCards().size());
+    }
+
+    @Test
+    public void deckIsShuffled(){
+        deck.shuffle();
+        assertFalse(RankType.KING == deck.checkRank(51));
+    }
 }

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Deck {
 
@@ -34,5 +36,13 @@ public class Deck {
 
     public RankType checkRank(int cardNumber) {
         return this.cards.get(cardNumber).getRank();
+    }
+
+    public List<?> getCards() {
+        return this.cards;
+    }
+
+    public void shuffle() {
+        Collections.shuffle(cards);
     }
 }
