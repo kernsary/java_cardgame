@@ -11,10 +11,12 @@ public class DeckTest {
 
     private Deck deck;
 
+
     @Before
     public void before(){
         deck = new Deck();
         deck.populate();
+
     }
 
     @Test
@@ -37,5 +39,12 @@ public class DeckTest {
     public void deckIsShuffled(){
         deck.shuffle();
         assertFalse(RankType.KING == deck.checkRank(51));
+    }
+
+    @Test
+    public void deckCanDealCard(){
+        deck.shuffle();
+        deck.dealHand();
+        assertEquals(7, deck.getHand().size());
     }
 }

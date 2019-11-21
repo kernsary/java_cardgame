@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.Collections;
 import java.util.List;
 
@@ -6,6 +7,7 @@ public class Deck {
 
     private ArrayList<Card> cards;
     private Card testCard;
+    private ArrayList<Card> hand;
 
     public Deck(){
         this.cards = new ArrayList<Card>(52);
@@ -13,6 +15,7 @@ public class Deck {
         for (int i = 0; i < 52; i++){
             cards.add(i, testCard);
         }
+        this.hand = new ArrayList<Card>();
 
     }
 
@@ -44,5 +47,17 @@ public class Deck {
 
     public void shuffle() {
         Collections.shuffle(cards);
+    }
+
+    public void dealHand() {
+        for (int i = 0; i < 7; i++){
+            Card dealtCard = cards.remove(i);
+            hand.add(dealtCard);
+        }
+
+    }
+
+    public List<?> getHand() {
+        return this.hand;
     }
 }
